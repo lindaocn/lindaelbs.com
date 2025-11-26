@@ -1,0 +1,307 @@
+/* Color Palette & Font */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --dark-blue: #2167CE;
+    --light-blue: #D9F0FF;
+    --blue-c1-c2: #6FA2D7; /* Ein mittleres Blau für die C1/C2 Kreise */
+    --font: 'Poppins', sans-serif;
+    --border-radius: 10px;
+}
+
+/* Global Styles and Base Layout */
+body {
+    font-family: var(--font);
+    line-height: 1.5;
+    margin: 0;
+    padding: 30px;
+    background-color: var(--light-blue);
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.resume-container {
+    width: 210mm;
+    background: var(--white);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    overflow: hidden; 
+}
+
+/* HEADER BLOCK */
+.header {
+    background-color: var(--light-blue);
+    padding: 25px 40px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    
+    /* Grid-Struktur für Links | Rechts */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    position: relative;
+    gap: 150px; 
+
+    /* Profilbild als zentrales Hintergrundbild */
+    background-image: url('portrait.png'); 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: 57%; 
+}
+
+/* 1. Header Left (Name & Objective) */
+.header-left {
+    padding-right: 10px;
+    position: relative;
+    z-index: 1; 
+}
+
+.name {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+
+.objective {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin: 10px 0 0 0;
+    max-width: 100%;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* 3. Header Right (Details & Buttons) */
+.header-right {
+    text-align: right;
+    padding-left: 10px;
+    position: relative;
+    z-index: 1; 
+}
+
+.personal-info {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.personal-info p {
+    margin: 3px 0;
+}
+
+.contact-button {
+    display: block;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    padding: 6px 12px;
+    border: 2px solid var(--dark-blue);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+    margin-left: auto; 
+    width: fit-content;
+}
+
+.contact-button:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+/* MAIN CONTENT (TWO COLUMNS) */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 2fr; 
+    gap: 30px;
+}
+
+/* Section Blocks (General Styling) */
+.section.block {
+    background-color: var(--white);
+    padding: 16px 16px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.title-uppercase {
+    color: var(--dark-blue);
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* ITEM STYLING (EXPERIENCES / VOLUNTEERING / CONFERENCES) */
+.item {
+    margin-bottom: 20px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.date.bullet-point {
+    position: relative;
+    padding-left: 15px; 
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.date.bullet-point::before {
+    content: '•';
+    color: var(--dark-blue);
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.location {
+    color: #555;
+    font-weight: 500;
+}
+
+.item .title {
+    margin: 0 0 3px 0;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.item .description {
+    margin: 0;
+    font-size: 0.8em;
+    color: #444; 
+}
+
+/* Right Column Specific Adjustments */
+.left-column,
+.right-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* LANGUAGE BADGES */
+.languages-block {
+    background-color: var(--white);
+    border: none; 
+    box-shadow: none;
+    padding: 16px 0; 
+}
+
+.language-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.language-badge {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-blue);
+    padding: 5px 10px;
+    border-radius: 50px;
+    gap: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.level-circle, .lang-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.c2, .c1, .a2 {
+    background-color: var(--blue-c1-c2); 
+    color: var(--white);
+}
+
+.white-bg {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+/* EDUCATION BLOCK (DARK BLUE BACKGROUND) */
+.resume-container
+    .education-block {
+        background-color: var(--dark-blue);
+        color: var(--white);
+}
+
+.education-block .title-uppercase {
+    color: var(--white);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.education-block .title {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.education-block .date,
+.education-block .location {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.education-block .description {
+    color: var(--white);
+    opacity: 0.8;
+}
+
+/* Links in Education Block */
+.education-block a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* Print Optimization */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+    .resume-container {
+        box-shadow: none;
+        width: 100%;
+        border-radius: 0;
+    }
+    .section.block, .header, .contact-button {
+        border-radius: 0;
+        box-shadow: none;
+        border: none !important;
+    }
+    .contact-button {
+        background-color: var(--white) !important;
+        color: var(--dark-blue) !important;
+        border: 1px solid var(--dark-blue) !important;
+    }
+}
