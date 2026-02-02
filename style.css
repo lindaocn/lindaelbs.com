@@ -16,7 +16,7 @@ body {
 
 h1,
 h2,
-h3{
+h3 {
     font-weight: 700;
     color: var(--primary-color);
 }
@@ -30,21 +30,21 @@ p {
     font-size: 1.25rem;
 }
 
-h1{
+h1 {
 
     font-size: 3.375rem;
 }
 
-h2{
+h2 {
     font-size: 2.688rem;
 }
 
-h3{
+h3 {
     font-size: 2.25rem;
-}   
+}
 
 
-h4{
+h4 {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--primary-color);
@@ -219,4 +219,96 @@ footer {
 
 .footer-links a:hover {
     color: var(--primary-color) !important;
+}
+
+/* Language Dropdown */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    z-index: 1000;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    min-width: 5rem;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown.open .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.lang-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: -20px;
+    padding-top: 25px;
+    z-index: -1;
+}
+
+.lang-dropdown.open .lang-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown.open .lang-toggle {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 25px;
+    z-index: 2;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.lang-option {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 0.3rem 0;
+    border-radius: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    display: block;
+}
+
+.lang-option:hover {
+    background-color: var(--bg-color);
 }
